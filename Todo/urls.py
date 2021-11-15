@@ -20,10 +20,12 @@ from todoForm import views
 
 router = routers.DefaultRouter()
 router.register(r'todos', views.TodoView, 'todoForm')
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include(router.urls))
-]
+router.register(r'logins', views.Validation_serializerView, 'todoForm')
+urlpatterns = router.urls
 
 
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('api/', include(router.urls)),
+#     path('login/', include(router.urls))
+# ]
